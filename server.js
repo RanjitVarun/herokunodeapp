@@ -17,19 +17,8 @@ server.listen(PORT, function() {
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  
    ssl: true
 });
-
-
-//   pool.connect();
-// pool.query('Select * from Employee;' , (err,res) =>{
-//   if(err) throw err;
-//   for (let row of res.rows) {
-//     console.log(JSON.stringify(row));
-//   }
-//   pool.end();
-// });
 
 
 app.get('/db', async (req, res) => {
