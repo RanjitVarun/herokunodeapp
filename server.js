@@ -1,6 +1,7 @@
 var PORT = process.env.PORT || 5000;
 var express = require('express');
 var app = express();
+var sql=require('mssql');
 
 const {Pool}=require('pg');
 
@@ -8,7 +9,12 @@ var http = require('http');
 var server = http.Server(app);
 
 app.use(express.static('client'));
-
+var config = {
+  user: process.env.USER,
+  password: process.env.PASSWORD,
+  server: 'localhost', 
+  database: 'SchoolDB' 
+};
 
 server.listen(PORT, function() {
   console.log('server running');
@@ -27,7 +33,7 @@ app.get('/db', async (req, res) => {
     const result = await client.query('SELECT * FROM Student_Detail');
    
     const results = { 'results': (result) ? result.rows : null};
-   res.send(results);
+   res.send(results+config.user);
 
   } catch (err) {
     console.error(err);
