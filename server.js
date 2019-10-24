@@ -33,7 +33,7 @@ app.get('/db', async (req, res) => {
     const result = await client.query('SELECT * FROM Student_Detail');
    
     const results = { 'results': (result) ? result.rows : null};
-   res.send(results+config.user);
+   res.send(config.user);
 
   } catch (err) {
     console.error(err);
