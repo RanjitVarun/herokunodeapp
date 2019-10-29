@@ -93,7 +93,7 @@ sql.connect(config, function (err) {
 
 
  app.get("/user", function(req , res){
-   var query = "INSERT INTO student_list VALUES (1,'NEU-MBA',	2019,25,23,'2019-10-25T06:08:54.000Z',13,'false',1)";
+   var query = "INSERT INTO student_list (id, programname, year, budget, forecast, actual, createdon, createdby )VALUES (1,'NEU-MBA',	2019,25,23,'2019-10-25T06:08:54.000Z',13,1)";
 sql.close();
 sql.connect(config, function (err) {
     if (err) {   
