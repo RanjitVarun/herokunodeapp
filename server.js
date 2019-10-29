@@ -51,7 +51,7 @@ const pool = new Pool({
 app.get('/db', async (req, res) => {
   try {
     const client = await pool.connect()
-    const result = await client.query('SELECT * FROM Student_Detail');
+    const result = await client.query('SELECT * FROM salesforce.student_detail__c');
    
     const results = { 'results': (result) ? result.rows : null};
    res.send(results);
