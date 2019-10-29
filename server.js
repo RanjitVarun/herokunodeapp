@@ -41,9 +41,9 @@ server.listen(PORT, function() {
   console.log('server running');
 });
 
-
+//connectionString: process.env.DATABASE_URL,
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString:"postgres://jzqwhxigxmlvke:45d22080aa781284b74a3009f90ad84cfdf35ccb54d4c556265e4a87afa3f375@ec2-174-129-252-211.compute-1.amazonaws.com:5432/d9j23hqbjo3rea",
    ssl: true
 });
 
@@ -80,7 +80,6 @@ sql.connect(config, function (err) {
 
   }
 
-    
  res.send(result);
 
 
@@ -114,6 +113,7 @@ sql.connect(config, function (err) {
                           });
                   }
     });
+    res.send('Insertion successfull');
   });
 
 
