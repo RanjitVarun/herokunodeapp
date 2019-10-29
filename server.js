@@ -55,7 +55,7 @@ app.get('/db', async (req, res) => {
     var total=result.rows.length;
     for(var i=0;i<total;i++)
     {
-      var query = "INSERT INTO student_list VALUES (result.rows[i].id, result.rows[i].name, result.rows[i].year__c, result.rows[i].budget__c, result.rows[i].forecast__c, result.rows[i].actual__c, result.rows[i].createddate, result.rows[i].createdby__c)";
+      var query = "INSERT INTO [student_list] VALUES (result.rows[i].id, result.rows[i].name, result.rows[i].year__c, result.rows[i].budget__c, result.rows[i].forecast__c, result.rows[i].actual__c, result.rows[i].createddate, result.rows[i].createdby__c)";
 res.json({message:query});
     }
     
