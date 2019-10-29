@@ -53,8 +53,8 @@ app.get('/db', async (req, res) => {
     const client = await pool.connect()
     const result = await client.query('SELECT * FROM salesforce.student_detail__c');
    
-    const results = { 'results': (result) ? result.rows : null};
-   res.send(results);
+    //const results = { 'results': (result) ? result.rows : null};
+   res.send(result);
 
   } catch (err) {
     console.error(err);
@@ -64,59 +64,13 @@ app.get('/db', async (req, res) => {
 });
 
 
-app.get("/user", function(req , res){
-  var query = "select * from inventory";
-
-  
-  sql.close();
-  sql.connect(config, function (err) {
-      if (err) {   
-                  console.log("Error while connecting database :- " + err);
-                  console.log('db error block');
-                 console.log(err);
-                 printres(err);
-               }
-               else {
-                   
-                      var request = new sql.Request();
-                      request.query(query, function (err, res) {
-                        if (err) {
-                                   console.log("Error while querying database :- " + err);
-                                   console.log('error block')
-                                   console.log(err);
-                                   
-                                   printres(err)
-                                  }
-                                  else {
-                                    console.log('hello');
-                                    console.log(res);
-                            
-                                   printres(res);
-                                         }
-                            });
-                    }
-   });
-
-   function printres(result){
-     res.send(result);
-   }
-
- 
-  
-});
-
-
-
 app.get("/users", function(req , res){
   var query = "INSERT INTO inventory (id, name, quantity) VALUES (3,'apple',323)";
   sql.close();
   sql.connect(config, function (err) {
       if (err) {   
                   console.log("Error while connecting database :- " + err);
-                  console.log('db error block');
                  console.log(err);
-                
-                
                }
                else {
                    
@@ -124,22 +78,63 @@ app.get("/users", function(req , res){
                       request.query(query, function (err, res) {
                         if (err) {
                                    console.log("Error while querying database :- " + err);
-                                   console.log('error block')
                                    console.log(err);
                                    
                                   
                                   }
                                   else {
-                                    console.log('hello');
                                     console.log(res);
-                                    
-                               
                                          }
                             });
                     }
    });
  
 });
+
+
+// app.get("/user", function(req , res){
+//   var query = "select * from inventory";
+
+  
+//   sql.close();
+//   sql.connect(config, function (err) {
+//       if (err) {   
+//                   console.log("Error while connecting database :- " + err);
+//                   console.log('db error block');
+//                  console.log(err);
+//                  printres(err);
+//                }
+//                else {
+                   
+//                       var request = new sql.Request();
+//                       request.query(query, function (err, res) {
+//                         if (err) {
+//                                    console.log("Error while querying database :- " + err);
+//                                    console.log('error block')
+//                                    console.log(err);
+                                   
+//                                    printres(err)
+//                                   }
+//                                   else {
+//                                     console.log('hello');
+//                                     console.log(res);
+                            
+//                                    printres(res);
+//                                          }
+//                             });
+//                     }
+//    });
+
+//    function printres(result){
+//      res.send(result);
+//    }
+
+ 
+  
+// });
+
+
+
 
 
 
