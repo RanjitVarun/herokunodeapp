@@ -53,12 +53,14 @@ app.get('/db', async (req, res) => {
     const client = await pool.connect()
     const result = await client.query('SELECT * FROM salesforce.student_detail__c');
     //const results = { 'results': (result) ? result.rows : null};
+    var total=result.rows.length;
+    // for(i=0;i<total;i++)
+    // {
+    //   var query = "INSERT INTO student_list (id, programname, year, budget, forecast, actual, createdon, createdby ) VALUES (result.rows[i].programname,)";
+    // }
     
-    
+res.send(result);
 
-    //var query = "INSERT INTO student_list (id, programname, year, budget, forecast, actual, createdon, createdby ) VALUES ()";
-  //  res.send(result.rows.length);
-   res.json({message:result.rows.length});
 
   } catch (err) {
     console.error(err);
