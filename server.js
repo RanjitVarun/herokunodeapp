@@ -54,6 +54,7 @@ app.get('/db', async (req, res) => {
     const result = await client.query('SELECT * FROM salesforce.student_detail__c');
     //const results = { 'results': (result) ? result.rows : null};
     var total=result.rows.length;
+    console.log(total);
 // res.send(total);
     //var query = "INSERT INTO student_list (id, programname, year, budget, forecast, actual, createdon, createdby ) VALUES ()";
    res.send(result.rows.length);
