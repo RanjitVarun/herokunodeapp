@@ -58,7 +58,7 @@ app.get('/db', async (req, res) => {
 
     //var query = "INSERT INTO student_list (id, programname, year, budget, forecast, actual, createdon, createdby ) VALUES ()";
   //  res.send(result.rows.length);
-   res.send.json({message:result.rows.length});
+   res.json({message:result.rows.length});
 
   } catch (err) {
     console.error(err);
