@@ -63,63 +63,6 @@ app.get('/db', async (req, res) => {
  
 });
 
-//console.log(config);
-
-
-// var connection = new Connection (config);
-
-// connection.on('connect', function(err){
-
-//   console.log(err);
-//   if(err!=null){
-//        console.log("not connected");
-//   }
-//   else{  
-//         console.log("Connected")
-//         connection.close();
-//   };
-// });
-
-// var result=null;
-
-// var  executeQuery = function(res, query){ 
-//   console.log('connected');    
-// sql.close();
-     
-//   sql.connect(config, function (err) {
-//       if (err) {   
-//                   console.log("Error while connecting database :- " + err);
-//                   console.log('db error block');
-//                  console.log(err);
-//                 printfunction(err)
-                
-//                }
-//                else {
-                   
-//                       var request = new sql.Request();
-//                       request.query(query, function (err, res) {
-//                         if (err) {
-//                                    console.log("Error while querying database :- " + err);
-//                                    console.log('error block')
-//                                    console.log(err);
-                                   
-//                                   }
-//                                   else {
-//                                     console.log('hello');
-//                                     console.log(res);
-//                                     printfunction(res);
-//                                          }
-//                             });
-//                     }
-//    }); 
-
-
-
-//    function printfunction(result){
-// result=result;
-//    };
-          
-
 
 app.get("/user", function(req , res){
   var query = "select * from inventory";
