@@ -56,7 +56,7 @@ app.get('/db', async (req, res) => {
     for(var i=0;i<total;i++)
     {
       var query = "INSERT INTO student_list VALUES (result.rows[i].id, result.rows[i].name, result.rows[i].year__c, result.rows[i].budget__c, result.rows[i].forecast__c, result.rows[i].actual__c, result.rows[i].createddate, result.rows[i].createdby__c)";
-// res.json({message:query});
+
 sql.close();
 sql.connect(config, function (err) {
     if (err) {   
@@ -76,7 +76,6 @@ sql.connect(config, function (err) {
                                        }
                           });
                   }
-
     });
 
   }
@@ -93,32 +92,30 @@ sql.connect(config, function (err) {
 });
 
 
-// app.get("/users", function(req , res){
-//   var query = "INSERT INTO inventory (id, name, quantity) VALUES (3,'apple',323)";
-//   sql.close();
-//   sql.connect(config, function (err) {
-//       if (err) {   
-//                   console.log("Error while connecting database :- " + err);
-//                  console.log(err);
-//                }
-//                else {
-                   
-//                       var request = new sql.Request();
-//                       request.query(query, function (err, res) {
-//                         if (err) {
-//                                    console.log("Error while querying database :- " + err);
-//                                    console.log(err);
-                                   
-                                  
-//                                   }
-//                                   else {
-//                                     console.log(res);
-//                                          }
-//                             });
-//                     }
-//    });
- 
-// });
+ app.get("/user", function(req , res){
+   var query = "INSERT INTO student_list VALUES (1,'NEU-MBA',	2019,25,23,'2019-10-25T06:08:54.000Z',13,'false',1)";
+sql.close();
+sql.connect(config, function (err) {
+    if (err) {   
+                console.log("Error while connecting database :- " + err);
+               console.log(err);
+             }
+             else {
+                 
+                    var request = new sql.Request();
+                    request.query(query, function (err, res) {
+                      if (err) {
+                                 console.log("Error while querying database :- " + err);
+                                 console.log(err);
+                                }
+                                else {
+                                  console.log(res);
+                                       }
+                          });
+                  }
+    });
+  });
+
 
 
 // app.get("/user", function(req , res){
