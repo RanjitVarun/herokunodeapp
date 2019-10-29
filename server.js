@@ -32,6 +32,7 @@ var config = {
   password: 'Dexter@112',
   server: 'localhost', 
   database: 'testdb',
+  host:5000
 
  
 };
@@ -79,52 +80,57 @@ app.get('/db', async (req, res) => {
 //   };
 // });
 
-
+// var result=null;
 
 // var  executeQuery = function(res, query){ 
 //   console.log('connected');    
 // sql.close();
      
-  // sql.connect(config, function (err) {
-  //     if (err) {   
-  //                 console.log("Error while connecting database :- " + err);
-  //                 console.log('db error block');
-  //                console.log(err);
+//   sql.connect(config, function (err) {
+//       if (err) {   
+//                   console.log("Error while connecting database :- " + err);
+//                   console.log('db error block');
+//                  console.log(err);
+//                 printfunction(err)
                 
-  //                // res.send(err);
-  //              }
-  //              else {
+//                }
+//                else {
                    
-  //                     var request = new sql.Request();
-  //                     request.query(query, function (err, res) {
-  //                       if (err) {
-  //                                  console.log("Error while querying database :- " + err);
-  //                                  console.log('error block')
-  //                                  console.log(err);
-  //                                  //res.send(err);
-  //                                 }
-  //                                 else {
-  //                                   console.log('hello');
-  //                                   console.log(res);
-  //                                   res.send(res);
-  //                                        }
-  //                           });
-  //                   }
-  //  });     
+//                       var request = new sql.Request();
+//                       request.query(query, function (err, res) {
+//                         if (err) {
+//                                    console.log("Error while querying database :- " + err);
+//                                    console.log('error block')
+//                                    console.log(err);
+                                   
+//                                   }
+//                                   else {
+//                                     console.log('hello');
+//                                     console.log(res);
+//                                     printfunction(res);
+//                                          }
+//                             });
+//                     }
+//    }); 
+
+
+
+//    function printfunction(result){
+// result=result;
+//    };
           
 
 
 app.get("/user", function(req , res){
   var query = "select * from inventory";
-  var result=null;
-  //executeQuery (res, query);
+
+  
   sql.close();
   sql.connect(config, function (err) {
       if (err) {   
                   console.log("Error while connecting database :- " + err);
                   console.log('db error block');
                  console.log(err);
-                
                  printres(err);
                }
                else {
@@ -135,13 +141,13 @@ app.get("/user", function(req , res){
                                    console.log("Error while querying database :- " + err);
                                    console.log('error block')
                                    console.log(err);
-                                   result=err;
+                                   
                                    printres(err)
                                   }
                                   else {
                                     console.log('hello');
                                     console.log(res);
-                                    result=res;
+                            
                                    printres(res);
                                          }
                             });
