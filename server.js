@@ -37,10 +37,10 @@ var config = {
 server.listen(PORT, function() {
   console.log('server running');
 });
-
+//connectionString:"postgres://jzqwhxigxmlvke:45d22080aa781284b74a3009f90ad84cfdf35ccb54d4c556265e4a87afa3f375@ec2-174-129-252-211.compute-1.amazonaws.com:5432/d9j23hqbjo3rea",
 //connectionString: process.env.DATABASE_URL,
 const pool = new Pool({
-  connectionString:"postgres://jzqwhxigxmlvke:45d22080aa781284b74a3009f90ad84cfdf35ccb54d4c556265e4a87afa3f375@ec2-174-129-252-211.compute-1.amazonaws.com:5432/d9j23hqbjo3rea",
+  connectionString: process.env.DATABASE_URL,
    ssl: true
 });
 
