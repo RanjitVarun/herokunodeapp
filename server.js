@@ -1,4 +1,4 @@
-var PORT = process.env.PORT || 5000;
+var PORT = process.env.PORT || 4000;
 var express = require('express');
 var app = express();
 var sql=require('mssql');
@@ -27,13 +27,10 @@ app.use(express.static('client'));
 //database: process.env.DB 
 
 var config = {
-
   user: 'SA',
   password: 'Dexter@112',
   server: 'localhost', 
-  database: 'testdb',
-  host:5000
-
+  database: 'testdb'
  
 };
 
