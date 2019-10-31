@@ -1,7 +1,7 @@
 {
         "user": "SA",
-        "password": "Dexter@112",
+        "password": "aspire@123",
         "server": "localhost",
-        "database": "testdb"
+        "database": "heroku_node"
       
 }
